@@ -16,6 +16,16 @@
       <td><xsl:value-of select="title"/></td>
       <td><xsl:value-of select="artist"/></td>
       <td><xsl:value-of select="country"/></td>
+      <td>
+        <xsl:choose>
+          <xsl:when test="price &gt; 10">
+            <span style="color:red;">🔴</span>
+          </xsl:when>
+          <xsl:otherwise>
+            <span style="color:green;">🟢</span>
+          </xsl:otherwise>
+        </xsl:choose>
+      </td>
     </tr>
     </xsl:for-each>
   </table>
